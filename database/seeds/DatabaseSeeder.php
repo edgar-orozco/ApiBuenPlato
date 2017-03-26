@@ -1,5 +1,6 @@
 <?php
 
+use App\ClasificacionFuncional;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,6 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call('UsersTableSeeder');
+        $this->call(UnidadesSeeder::class);
+        $this->call(ClasificacionesFuncionalesSeeder::class);
+        $this->call(GrupoAlimentoSeeder::class);
     }
 }

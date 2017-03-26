@@ -11,6 +11,20 @@
 |
 */
 
+use Illuminate\Http\Request;
+
 $app->get('/', function () use ($app) {
+
     return $app->version();
 });
+
+$app->get('/', [
+    'as' => 'home', 'uses' => 'ExampleController@index'
+]);
+
+$app->get('/alimentos/grupos', [
+    'as' => 'alimento.grupo.all', 'uses' => 'GrupoAlimentoController@all'
+]);
+$app->get('/alimentos/grupo/{id}', [
+    'as' => 'alimento.grupo', 'uses' => 'GrupoAlimentoController@find'
+]);
